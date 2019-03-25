@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	display: list-item;  此元素会作为列表显示。
+	display:list-item为元素内容生成一个块型盒，随后再生成一个列表型的行内盒。
+	                                 其效果就和ul中出现项目列表符号一样。
+	      通俗地说就是会在内容前面自动加上黑点，而display:block则不会出现黑点。
+    text-align: -webkit-match-parent;
+    
+    background-Origin属性指定background-position属性应该是相对位置。
+        注意如果背景图像background-attachment是"固定"，这个属性没有任何效果。
+        语法： background-origin: padding-box|border-box|content-box;
+        
+        语法：box-sizing: content-box|border-box|inherit:
+        content-box：这是CSS2.1指定的宽度和高度的行为。
+                                    指定元素的宽度和高度（最小/最大属性）适用于box的宽度和高度。
+                                    元素的填充和边框布局和绘制指定宽度和高度除外
+                                    仅包括content.即设置的width属性值仅为content的值。
+        border-box：指定宽度和高度（最小/最大属性）确定元素边框box。
+                                       也就是说，对元素指定宽度和高度包括padding和border的指定。
+                    border-box:包括content+padding+border.设置的width的值是content+padding+border的值。
+                                    内容的宽度和高度减去各自双方该边框和填充的宽度从指定的"宽度"和"高度"属性计算
+        inherit：指定box-sizing属性的值，应该从父元素继承
+        使用场景：当需要两个宽度为50%的div确保并列时，设置box-sizing:border-box; 
+        此时的width:50%;是content+padding+border的宽度。
+	</head>
+	<body>
+	</body>
+</html>

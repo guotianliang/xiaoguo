@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			请用js去除字符串空格？
+			方法一：使用replace正则匹配的方法
+			去除所有空格: str = str.replace(/\s*/g,"");      
+			
+			去除两头空格: str = str.replace(/^\s*|\s*$/g,"");
+			
+			去除左空格： str = str.replace( /^\s*/, “”);
+			
+			去除右空格： str = str.replace(/(\s*$)/g, "");
+
+		</script>
+	</body>
+</html>

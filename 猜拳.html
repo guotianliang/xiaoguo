@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js">
+		</script>
+		<script type="text/javascript">
+			* {
+				margin:0;
+				padding:0;
+			}
+			.But {
+				width:100%;
+				margin:20px auto;
+				text-align:center;
+			}
+			.cont {
+				width:50%;
+				height:5rem;
+				margin:0 auto;
+				border:1px #CCC solid;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+	<div class="But">
+		<button class="scissors" type="button">剪刀</button>
+		<button class="stone" type="button">石头</button>
+		<button class="cloth" type="button">布</button>
+	</div>
+	<div class="cont">
+		<div class="own">你出：<span></span></div>
+		<div class="PC">电脑出：<span></span></div>
+		<div class="judge">结果：<span></span></div>
+	</div>
+</div>
+<script type="text/javascript">
+	 $(function() {
+     $(".scissors").click(function() {
+         $(".own span").html("剪刀");
+         enter();
+     });
+     $(".stone").click(function() {
+         $(".own span").html("石头");
+         enter();
+     });
+     $(".cloth").click(function() {
+         $(".own span").html("布");
+         enter();
+     });
+ });
+
+
+ function enter() {
+     var user = ['剪刀', '石头', '布'];
+
+     var PCsys = Math.floor(Math.random() * user.length + 1) - 1;
+     var n = user[PCsys];
+
+     $(".PC span").html(n);
+
+     var P = $(".own span").html();
+     var S = $(".PC span").html();
+
+     if (P == S) {
+         $(".judge span").html("平局");
+     } else if (P == user[0] && S == user[2] || P == user[1] && S == user[0] || P == user[2] && S == user[1]) {
+         $(".judge span").html("胜");
+     } else {
+         $(".judge span").html("输");
+     }
+ }
+</script>
+	</body>
+</html>

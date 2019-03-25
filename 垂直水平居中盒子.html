@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 200px;
+				height: 200px;
+				
+				background: red;
+				/*border: 2px solid black;*/
+
+				position: absolute;
+				
+				/*top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;*/
+				
+				/*top: 50%;
+				left: 50%;
+				margin:-100px 0 0 -100px;*/
+				
+				/*transform: translate(-50%,-50%);
+				top: 50%; 
+				left: 50%;*/
+
+			}
+			.parent {
+			     width: 400px;
+            height: 200px;
+            background: #f99;
+            display: flex;
+            justify-content: center; /*实现水平居中*/
+            align-items: center;   /*实现垂直居中*/
+			}
+			 
+			.between {
+			    width: 100px;
+	            height: 100px;
+	            background: green;
+			    }
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="between">
+				
+			</div>
+		</div>
+		
+		<!--
+			
+		一、
+			上下左右均0位置定位,margin: auto
+			优点：
+			1.支持跨浏览器，包括IE8-IE10.
+			2.无需其他特殊标记，CSS代码量少
+			3.支持百分比%属性值和min-/max-属性
+			4.只用这一个类可实现任何内容块居中
+			5.不论是否设置padding都可居中（在不使用box-sizing属性的前提下）
+			6.内容块可以被重绘。
+			7.完美支持图片居中。
+                        缺点：
+			1.必须声明高度（查看可变高度Variable Height）。
+			2.建议设置overflow:auto来防止内容越界溢出。（查看溢出Overflow）。
+		二、
+		    优点：
+			1.良好的跨浏览器特性，兼容IE6-IE7。
+			2.代码量少。
+		    缺点：
+			1.不能自适应。不支持百分比尺寸和min-/max-属性设置。
+			2.内容可能溢出容器。
+		三、
+		  这是最简单的方法，不仅能实现绝对居中同样的效果，也支持联合可变高度方式使用。 
+                    缺点：
+			1.IE8不支持
+			2.属性需要写浏览器厂商前缀
+			3.可能干扰其他transform效果
+			4.某些情形下会出现文本或元素边界渲染模糊的现象
+		四、
+		外层盒子<有固定>宽高，内层盒子<有固定>宽高的盒子居中。实现途径： display:table-cell。
+			display: table-cell; vertical-align: middle; 子级 margin: 0 auto;
+	    五、
+	        弹性盒模型
+	         display: flex;
+            justify-content: center; /*实现水平居中*/
+            align-items: center;
+		-->
+	</body>
+</html>

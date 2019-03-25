@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>注册页面</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			form{
+				width: 400px;
+				height: 400px;
+				margin: 50px auto;
+			}
+			input{
+				display: block;
+				width: 350px;
+				height: 40px;
+				font-size: 16px;
+				line-height: 50px;
+				padding: 5px 25px;
+				border-radius: 10px;
+				border: 1px solid #ccc;
+				list-style: none;
+			}
+			.submit{
+				width: 50px;
+				height: 30px;
+				margin: 0 auto;
+				padding: 0;
+				line-height: 16px;
+			}
+			p{
+				color: red;
+				font-size: 12px;
+				padding: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="登录页面.html" method="get">
+			<input type="text" id="user_name" value="" placeholder="请输入您的用户名"/>
+			<p></p>
+			<input type="password" id="password" value="" placeholder="请输入您的密码"/>
+			<p></p>
+			<input type="password" id="password2" value="" placeholder="请再次输入您的密码"/>
+			<p></p>
+			<input type="text" id="tel" value="" placeholder="请输入您的手机号"/>
+			<p></p>
+			<input type="text" id="mail" value="" placeholder="请输入您的邮箱"/>
+			<p></p>
+			<input type="submit" value="注册" class="submit"/>
+		</form>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oForm=document.getElementsByTagName('form')[0];
+			var oName=document.getElementById('user_name');
+			var oPsd=document.getElementById('password');
+			var oPsd2=document.getElementById('password2');
+			var oTel=document.getElementById('tel');
+			var oMail=document.getElementById('mail');
+			var oP=document.getElementsByTagName('p');
+			var reName=/^\w{4,16}$/;
+			var rePsd=/^\w{60W,12}$/;
+			var reTel=/^1[3578]\d{9}$/;
+			var reMail=/^\w+@[a-z0-9]+\.[a-z]+$/i;
+			var bool=true;
+			function checkName(){
+				if(!reName.test(oName.value)){
+					bool=false;
+					if(oName.value==''){
+						oP[0].innerHTML='请输入用户名！'
+					}else{
+						oP[0].innerHTML='用户名不符合要求，长度在1-8之间'
+					}
+				}else{
+					oP[0].innerHTML='';
+					bool=true;
+				}
+			}
+			function checkPsd(){
+				if(!reName.test(oPsd.value)){
+					bool=false;
+					if(oPsd.value==''){
+						oP[1].innerHTML='请输入密码！'
+					}else{
+						oP[1].innerHTML='密码不符合要求，长度在6-12之间'
+					}
+				}else{
+					if(oPsd.value==oPsd2.value){
+						oP[1].innerHTML='';
+						oP[2].innerHTML='';
+						bool=true;
+					}else{
+						oP[2].innerHTML='两次密码输入有误!'
+					}
+				}
+			}
+			function checkTel(){
+				if(!reName.test(oTel.value)){
+					bool=false;
+					if(oTel.value==''){
+						oP[3].innerHTML='请输入手机号码！'
+					}else{
+						oP[3].innerHTML='手机号码格式输入有误！'
+					}
+				}else{
+					oP[3].innerHTML='';
+					bool=true;
+				}
+			}
+			function checkMail(){
+				if(!reMail.test(oMail.value)){
+					bool=false;
+					if(oMail.value==''){
+						oP[4].innerHTML='请输入邮箱！'
+					}else{
+						oP[4].innerHTML='邮箱格式输入有误！'
+					}
+				}else{
+					oP[4].innerHTML='';
+					bool=true;
+				}
+			}
+			// onblur 事件会在对象失去焦点时发生。
+			oName.onblur=function(){
+				checkName();
+			}
+			oPsd.onblur=function(){
+				checkPsd();
+			}
+			oPsd2.onblur=function(){
+				checkPsd();
+			}
+			oTel.onblur=function(){
+				checkTel();
+			}
+			oMail.onblur=function(){
+				checkMail();
+			}
+			oForm.onsubmit=function(){
+// 				checkName();
+// 				checkPsd();
+// 				checkTel();
+// 				checkMail();
+				if(!bool){
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>

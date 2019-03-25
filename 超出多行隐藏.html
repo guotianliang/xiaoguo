@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--
+			//单行文本溢出…
+.inaline {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+//多行文本溢出…
+.intwoline {
+    display: -webkit-box: !important;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    word-break: break-all;
+
+    -webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+}
+		-->
+		<!--
+			单行显示省略号
+			1 overflow: hidden;
+			2 text-overflow: ellipsis;
+			3 white-space: nowrap;
+		-->
+		<!--
+			多行显示省略号
+			 display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+            /*-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+            display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+            -webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。*/
+		-->
+		<!--<div style="width: 200px;height: 200px;float: left;background: red;"></div>-->
+		<!--<div style="margin-left: 200px;height: 200px;background: blue;"></div>-->
+		
+	</body>
+</html>

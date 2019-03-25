@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>卡片效果</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.div1{
+				width: 200px;
+				height: 200px;
+				box-shadow: 0 4px 16px 0 #0070bb;
+				box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+			}
+			.ban_txt{
+			position: absolute;
+		    left: 0;
+		    top: 0;
+		    color: #fff;
+		    background: #d44e4d;
+		    padding: 8px 12px;
+		     }
+		</style>
+	</head>
+	<body>
+	<!--基础说明：
+	box-shadow: h-shadow v-shadow blur spread color inset;
+    外阴影：box-shadow: X轴  Y轴  Rpx  color;
+    属性说明（顺序依次对应）： 阴影的X轴(可以使用负值) 阴影的Y轴(可以使用负值) 阴影模糊值（大小）    阴影的颜色
+    内阴影：box-shadow: X轴  Y轴  Rpx  color  inset;
+       默认是外阴影   内阴影：inset 可以设置成内部阴影
+    注（PS）：此属性使用于盒模型 如(div,p,h1,h2,h3,h4,h5,h6等) 不是用来设置文字阴影  
+    基于主流浏览器上使用box-shadow属性时，我们需要将属性的名称写成-webkit-box-shadow的形式。
+  Firefox浏览器则需要写成-moz-box-shadow的形式
+    欧朋浏览器  -o-box-shadow   IE>9  -ms-box-shadow -->
+    <div class="div1"></div>
+    
+    
+	</body>
+</html>

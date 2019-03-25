@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+    <style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.warp {
+		position: relative;
+		overflow: hidden;
+	}
+	.box {
+		width: 100%;
+		height: 500%;
+		top: 0;
+		position: absolute;
+	}
+	.content_one {
+		width: 100%;
+		height: 20%;
+		position: relative;
+	}
+	.nav{
+		position: fixed;
+		bottom: 20%;
+		right: 10%;
+	    z-index: 100;
+	}
+	.nav li{
+		list-style: none;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: white;
+		margin-bottom: 10px;
+	
+	}
+	.nav .nav_li{
+		width: 14px;
+		height: 14px;
+	}
+    </style>
+	<body>
+			<div class="nav">
+			<ul>
+				<li class="nav_li"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>		
+		<div class="warp" style="background: greenyellow;">
+			<div class="box">				
+				<div class="content_one" style="background:red;"></div>
+				<div class="content_one" style="background:pink;"></div>
+				<div class="content_one" style="background:black;"></div>					
+				<div class="content_one" style="background:blue;"></div>					
+				<div class="content_one" style="background:yellow;"></div>						
+				</div>								
+			</div>
+		</div>
+		<script type="text/javascript" src="jquery.js" ></script>
+		<script>
+			$(function() {	
+				var height = $(window).height();
+				var width = $(window).width();
+				$(".warp").height(height);
+				$(".warp").width(width);
+				$(window).resize(function() {
+						var height = $(window).height();
+						var width = $(window).width();
+						$(".warp").height(height);
+						$(".warp").width(width);
+			})		   
+							
+					var index = 0;
+					var isRuning = false;
+					function scrollUp() {
+						if (!isRuning) {
+							isRuning=true					
+						setTimeout(function () {
+							isRuning = false;
+						},1000)
+						if(index > 0){
+							index--;
+						}
+						$(".nav").find("li").removeClass("nav_li");
+						$(".nav").find("li").eq(index).addClass("nav_li");
+						$(".box").animate({top:index*-100+"%"})
+						}
+					}
+					function scrollDown() {
+						if(!isRuning){
+							isRuning=true
+						    setTimeout(function () {
+						    	isRuning = false;
+						    },1000)												
+						if(index < $(".content_one").length-1){
+							index++;
+						}
+						$(".nav").find("li").removeClass("nav_li");
+						$(".nav").find("li").eq(index).addClass("nav_li");
+						$(".box").animate({top:index*-100+"%"})
+						}
+					}
+					
+				
+				function mouseWheel(ev) {
+					if (ev.wheelDelta) {
+						if (ev.wheelDelta > 0) {
+							scrollUp()
+						} else {
+							scrollDown()
+						}
+						console.log(ev.wheelDelta)
+					} else {
+						if (ev.detail > 0) {
+							scrollDown()
+						} else {
+							scrollUp()
+						}
+						// console.log(ev.detail)
+					}
+				}
+				window.onmousewheel=mouseWheel
+				window.addEventListener("DOMMouseScroll", mouseWheel)
+			})
+		</script>
+	</body>
+
+</html>
